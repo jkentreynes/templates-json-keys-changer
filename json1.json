@@ -1,0 +1,162 @@
+{
+    "types": [
+        "Self",
+        "Peer",
+        "Informal",
+        "Formal",
+        "Other"
+    ],
+    "tags": [],
+    "groups": [
+        {
+            "name": "Untitled Section",
+            "id": "6a2ab040-3476-40a4-8993-7618d990ae57",
+            "indicators": [
+                {
+                    "type": 1,
+                    "questionText": "Untitled Open-Ended",
+                    "id": "6ef59300-12f7-4178-bab0-a0a6a7f826ef",
+                    "templateAttachments": []
+                },
+                {
+                    "type": 3,
+                    "questionText": "Untitled Multiple Choice",
+                    "answerOptions": [
+                        {
+                            "optionText": "Option 1",
+                            "type": 3,
+                            "subOptions": [
+                                {
+                                    "id": "da851243-d882-4efd-a338-bad9920f27b3",
+                                    "optionText": "Sub-option 1",
+                                    "type": 2,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "3b47cb44-f243-425c-8170-9c9e7771d47a",
+                                    "optionText": "Sub-option 2",
+                                    "type": 2,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "a1f097b7-c341-4fe0-ba72-89d862ff2e87",
+                                    "optionText": "Sub-option 3",
+                                    "type": 2,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "fee143ed-35a7-486c-9573-c55f46f0aa04",
+                                    "optionText": "Sub-option 4",
+                                    "type": 2,
+                                    "selected": false
+                                }
+                            ],
+                            "id": "1f45ed76-fe25-4341-8d7a-e4092aba44d1",
+                            "selected": false
+                        },
+                        {
+                            "optionText": "Option 2",
+                            "type": 2,
+                            "subOptions": [
+                                {
+                                    "id": "4d643727-0125-424e-94f7-f1d3f0c14717",
+                                    "optionText": "Sub-option 1",
+                                    "type": 2,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "95ab2c03-45a6-41d9-8d16-3cabe031c09b",
+                                    "optionText": "Sub-option 2",
+                                    "type": 2,
+                                    "selected": false
+                                }
+                            ],
+                            "id": "dc3012c1-de49-40c4-a9ef-8888f4316bb1",
+                            "selected": false
+                        }
+                    ],
+                    "id": "a718d600-06ef-4a2f-b3da-d6c992c96ed4",
+                    "score": 0,
+                    "templateAttachments": []
+                },
+                {
+                    "type": 4,
+                    "questionText": "Untitled Rubric",
+                    "answerOptions": [
+                        {
+                            "optionText": "Title 1",
+                            "description": "Description 1",
+                            "type": 2,
+                            "id": "fe78a261-0413-41e9-bfa2-eca28a455078",
+                            "selected": false
+                        },
+                        {
+                            "optionText": "Title 2",
+                            "description": "Description 2",
+                            "type": 2,
+                            "id": "a48631e8-1ca8-414f-ab0a-3ac1afec2b58",
+                            "selected": false
+                        }
+                    ],
+                    "id": "ad00b45e-313a-4ae8-bed5-670d11f8f4ad",
+                    "templateAttachments": []
+                },
+                {
+                    "type": 5,
+                    "questionText": "Untitled Label",
+                    "id": "83cfed05-4554-4994-b0ed-6145e235cab5",
+                    "templateAttachments": []
+                },
+                {
+                    "type": 2,
+                    "questionText": "Untitled Multiple Choice",
+                    "answerOptions": [
+                        {
+                            "optionText": "Option 1",
+                            "type": 3,
+                            "subOptions": [
+                                {
+                                    "id": "1d998b05-d98b-481b-aaed-4add8964216b",
+                                    "optionText": "Sub-option 1",
+                                    "type": 2,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "6d90fcb0-ddf3-4dd4-8a58-827dcf25e3ef",
+                                    "optionText": "Sub-option 2",
+                                    "type": 2,
+                                    "selected": false
+                                },
+                                {
+                                    "id": "63a8ada1-7586-45b2-93d1-ca4b9aa2e9db",
+                                    "optionText": "Sub-option 3",
+                                    "type": 2,
+                                    "selected": false
+                                }
+                            ],
+                            "id": "b050247f-9f59-460c-92da-b0372c33f2c9",
+                            "selected": false
+                        },
+                        {
+                            "optionText": "Option 2",
+                            "type": 2,
+                            "id": "4580138d-2715-4891-a0df-db7995148487",
+                            "selected": false
+                        }
+                    ],
+                    "id": "6ddc5df9-8687-4310-8887-92a9c99a40c7",
+                    "score": 0,
+                    "templateAttachments": []
+                }
+            ],
+            "templateAttachments": []
+        }
+    ],
+    "creator": {
+        "id": "13778"
+    },
+    "name": "Testing Template",
+    "id": "49b7c4ca-a880-48f1-9483-fc0d19e6b4d1",
+    "createdAt": "2015-11-13T00:50:03.167Z",
+    "updatedAt": "2015-11-13T00:50:57.524Z"
+}
