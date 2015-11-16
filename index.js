@@ -12,15 +12,15 @@ var utils   = require( './lib/utils.js');
 		'description'  : 'questionText',
 		'multieSelect' : 'type',
 		'options'      : 'answerOptions',
-		'odescription' : 'optionsText'
+		'odescription' : 'optionText'
 	};
 
 	var types = {
-		'Open-Ended'     : '1',
-		'SingleSelect'   : '2',
-		'MultipleSelect' : '3',
-		'Rubric'         : '4',
-		'Label'          : '5'
+		'Open-Ended'     : 1,
+		'SingleSelect'   : 2,
+		'MultipleSelect' : 3,
+		'Rubric'         : 4,
+		'Label'          : 5
 	};
 
 	var date = new Date();
