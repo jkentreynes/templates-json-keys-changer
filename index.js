@@ -54,7 +54,7 @@ var utils   = require( './lib/utils.js');
 										_.forEach( indicatorValue, function ( options, optionsIndex) {
 											_.forOwn( options, function ( optionsValue, optionsKey ) {
 												if( optionsKey === 'description' ) {
-													if ( json.groups[groupIndex].indicators[indicatorIndex].type === 4) {
+													if ( json.groups[groupIndex].indicators[indicatorIndex].type === 4 || json.groups[groupIndex].indicators[indicatorIndex].type === 3 ) {
 														json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex].type = types.SingleSelect;
 													} else {
 														json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex].type = json.groups[groupIndex].indicators[indicatorIndex].type;
