@@ -25,17 +25,31 @@ var utils   = require( './lib/utils.js');
 	};
 
 	var date = new Date();
+	var newJson = {};
+	var indicators = [];
 
 	utils.globber( './templates-json/*.txt' ).then( function ( jsonFiles ) {
 		_.forEach( jsonFiles, function ( json ) {
+			newJson = {};
+
+			newJson.scenarioId   = 'T-' + moment().format('DDMMYYHHmmss');
+			newJson.scenario     = 'create-template';
+			newJson.scenarioType = 'success';
+
 			var fileName = path.basename(json, path.extname( json ) );
 			json = JSON.parse( fs.readFileSync( json, 'utf8' ) );
+
+				json.name = newJson.scenarioId + ' ' + json.name;
+
 				_.forEach( json.groups, function ( groups, groupIndex ) {
 					delete json.description;
 					_.forOwn( groups, function ( groupValue, groupKey ) {
 						if ( groupKey === 'title' ){
 							json.groups[groupIndex][keys[groupKey]] = groupValue;
+							indicators = indicators = json.groups[groupIndex].indicators;
 							delete json.groups[groupIndex][groupKey];
+							delete json.groups[groupIndex].indicators;
+							json.groups[groupIndex].indicators = indicators;
 						} else if ( groupKey === 'indicators') {
 							_.forEach( groupValue, function ( indicators, indicatorIndex ) {
 								_.forOwn( indicators, function ( indicatorValue, indicatorKey ) {
@@ -79,15 +93,8 @@ var utils   = require( './lib/utils.js');
 							} );
 						}
 					} );
-
-					var newJson = {};
-
-					newJson.data = json;
-					newJson.scenarioId   = 'T-' + moment().format('DDMMYYHHmmss');
-					newJson.scenario     = 'create-template';
-					newJson.scenarioType = 'success';
-
-					utils.writeFile( './converted-jsons/' + fileName + '.json', JSON.stringify( newJson ) );
+				newJson.data = json;
+				utils.writeFile( './converted-jsons/' + fileName + '.json', JSON.stringify( newJson ) );
 			} );
 		} );
 	} );
