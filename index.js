@@ -53,11 +53,17 @@ var utils   = require( './lib/utils.js');
 										_.forEach( indicatorValue, function ( options, optionsIndex) {
 											_.forOwn( options, function ( optionsValue, optionsKey ) {
 												if( optionsKey === 'description' ) {
+													if ( json.groups[groupIndex].indicators[indicatorIndex].type === 4) {
+														json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex].type = types.SingleSelect;
+													} else {
+														json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex].type = json.groups[groupIndex].indicators[indicatorIndex].type;
+													}
 													json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex][keys['o' + optionsKey]] = optionsValue;
 													delete json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex][optionsKey];
 												} else if ( optionsKey === 'subOptions') {
 													_.forEach( optionsValue, function ( sOptions, sOptionsIndex) {
 														_.forOwn( sOptions, function ( sOptionsValue, sOptionsKey ) {
+															json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex][optionsKey][sOptionsIndex].type = json.groups[groupIndex].indicators[indicatorIndex].type;
 															json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex][optionsKey][sOptionsIndex][keys['o' + sOptionsKey]] = sOptionsValue;
 															delete json.groups[groupIndex].indicators[indicatorIndex][keys[indicatorKey]][optionsIndex][optionsKey][sOptionsIndex][sOptionsKey];
 														} );
