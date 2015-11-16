@@ -3,6 +3,7 @@ var Promise = require( 'bluebird' );
 var glob    = require( 'glob' );
 var fs      = require( 'fs-extra' );
 var moment  = require( 'moment' );
+var path    = require( 'path' );
 var utils   = require( './lib/utils.js');
 
 ( function change( ) {
@@ -26,7 +27,7 @@ var utils   = require( './lib/utils.js');
 	var date = new Date();
 
 	utils.globber( './templates-json/*.txt' ).then( function ( jsonFiles ) {
-		_.forEach( jsonFiles, function ( json ) {
+		_.forEach( jsonFiles, function ( json, jsonPath ) {
 			json = JSON.parse( fs.readFileSync( json, 'utf8' ) );
 				_.forEach( json.groups, function ( groups, groupIndex ) {
 					delete json.description;
@@ -81,11 +82,11 @@ var utils   = require( './lib/utils.js');
 					var newJson = {};
 
 					newJson.data = json;
-					newJson.scenarioId   = 'T-' + moment().format('THH:mm:ss');
+					newJson.scenarioId   = 'T-' + moment().format('DDMMYYHHmmss');
 					newJson.scenario     = 'create-template';
 					newJson.scenarioType = 'success';
 
-					utils.writeFile( './converted-jsons/' + json.name + moment().format('THH:mm:ss') + '.json', JSON.stringify( newJson ) );
+					utils.writeFile( './converted-jsons/' + jsonPath + '.json', JSON.stringify( newJson ) );
 			} );
 		} );
 	} );
