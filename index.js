@@ -27,7 +27,8 @@ var utils   = require( './lib/utils.js');
 	var date = new Date();
 
 	utils.globber( './templates-json/*.txt' ).then( function ( jsonFiles ) {
-		_.forEach( jsonFiles, function ( json, jsonPath ) {
+		_.forEach( jsonFiles, function ( json ) {
+			var fileName = path.basename(json, path.extname( json ) );
 			json = JSON.parse( fs.readFileSync( json, 'utf8' ) );
 				_.forEach( json.groups, function ( groups, groupIndex ) {
 					delete json.description;
@@ -86,7 +87,7 @@ var utils   = require( './lib/utils.js');
 					newJson.scenario     = 'create-template';
 					newJson.scenarioType = 'success';
 
-					utils.writeFile( './converted-jsons/' + jsonPath + '.json', JSON.stringify( newJson ) );
+					utils.writeFile( './converted-jsons/' + fileName + '.json', JSON.stringify( newJson ) );
 			} );
 		} );
 	} );
