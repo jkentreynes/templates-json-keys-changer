@@ -39,7 +39,7 @@ var utils   = require( './lib/utils.js');
 			var fileName = path.basename(json, path.extname( json ) );
 			json = JSON.parse( fs.readFileSync( json, 'utf8' ) );
 
-				json.name = newJson.scenarioId + ' ' + json.name;
+				json.name = newJson.scenarioId + '-' + json.name;
 
 				_.forEach( json.groups, function ( groups, groupIndex ) {
 					delete json.description;
